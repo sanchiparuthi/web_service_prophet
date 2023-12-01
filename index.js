@@ -1,6 +1,8 @@
 import express from 'express'
+import { generate, count } from "random-words";
 
-const app = express()
+const app = express();
+const word= generate();
 
 const port = process.env.PORT || 3001
 
@@ -123,5 +125,5 @@ if(req.query.name == prose[key].name){
 })
 
 app.listen(port, () =>{
-    console.log(`example app listening on port ${port}`)
+    console.log(`app listening on port ${port}`)
     })
