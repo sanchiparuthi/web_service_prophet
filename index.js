@@ -9,7 +9,7 @@ const port = process.env.PORT || 3001
 let prose = { 
 
     1:{
-    name: love,
+    name: "love",
     text: `But if in your fear you would seek only\n
     love’s peace and love’s pleasure,
     Then it is better for you that you cover
@@ -21,7 +21,7 @@ let prose = {
     },
     
     2:{
-        name: marriage,
+        name: "marriage",
         text: `Give your hearts, but not into each
         other’s keeping.
              For only the hand of Life can contain
@@ -35,7 +35,7 @@ let prose = {
 
 
     3:{
-        name: children,
+        name: "children",
         text: `Your children are not your children.
         They are the sons and daughters of Life’s longing for itself.
         They come through you but not from you,
@@ -51,7 +51,7 @@ let prose = {
  
  
     4: {
-        name : giving,
+        name : "giving",
         text :`You often say, “I would give, but only to the deserving.”
         The trees in your orchard say not so, nor the flocks in your pasture.
         They give that they may live, for to withhold is to perish.
@@ -62,7 +62,7 @@ let prose = {
  
  
     5: {
-        name : pain,
+        name : "pain",
         text :`Your pain is the breaking of the shell that encloses your understanding.
         Even as the stone of the fruit must break, that its heart may stand in the sun, so must you know pain.
         And could you keep your heart in wonder at the daily miracles of your life your pain would not seem less wondrous than your joy;
@@ -72,7 +72,7 @@ let prose = {
  
  
     6: {
-        name : beauty,
+        name : "beauty",
         text :`beauty is not a need but an ecstasy
         It is not a mouth thirsting nor an empty hand stretched forth,
         But rather a heart enflamed and a soul enchanted.
@@ -84,7 +84,7 @@ let prose = {
  
  
     7: {
-        name : death,
+        name : "death",
         text :`You would know the secret of death.
         But how shall you find it unless you seek it in the heart of life?
         The owl whose night-bound eyes are blind unto the day cannot unveil the mystery of light.
@@ -94,7 +94,7 @@ let prose = {
  
  
     8: {
-        name : freedom,
+        name : "freedom",
         text :`And if it is a despot you would dethrone, see first that his throne erected within you is destroyed.
         For how can a tyrant rule the free and the proud, but for a tyranny in their own freedom and a shame in their own pride?
         And if it is a care you would cast off, that care has been chosen by you rather than imposed upon you.
@@ -103,7 +103,7 @@ let prose = {
  
  
     9: {
-        name : time,
+        name : "time",
         text :`Who among you does not feel that his power to love is boundless?
         And yet who does not feel that very love, though boundless, encompassed within the centre of his being, and moving not from love thought to love thought, nor from love deeds to other love deeds?
         And is not time even as love is, undivided and spaceless?
@@ -116,7 +116,7 @@ let prose = {
 
 app.get('/', (req, res) =>{
     let prophetOn =[];
-    Object.keys(prose),forEach((key, value) => {
+    Object.keys(prose).forEach((key, value) => {
 if(req.query.name == prose[key].name){
     prophetOn.push(key).text
 }
