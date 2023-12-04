@@ -2,7 +2,9 @@ import express from 'express'
 import { generate, count } from "random-words";
 
 const app = express();
-const word= generate();
+//const word= generate();
+
+app.use(express.json());
 
 const port = process.env.PORT || 3001
 
@@ -122,8 +124,22 @@ if(req.query.name == prose[key].name){
 }
     })
     res.send(prophetOn)
+});
+
+
+
+app.get("/id/:id/" ,(req,res) => {
+    let texts =[];
+    Object.keys(prose).forEach((key,value) =>{
+        let n = `:${key}`;
+        console.log(req.params.id)
+        if(req.params.id == n){
+            texts.push(prose[key].text);
+        }
+    })
+    res.send(texts)
 })
 
 app.listen(port, () =>{
     console.log(`app listening on port ${port}`)
-    })
+})
